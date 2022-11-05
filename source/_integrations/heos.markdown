@@ -120,6 +120,8 @@ media_content_id: "http://path.to/stream.mp3"
 
 For grouping HEOS media players together for synchronous playback you can use the `media_player.join` service. With the example service data payload down below you'll expand playback of `media_player.office` to the `media_player.kitchen` and `media_player.bathroom` players. Please note that all of the media players need to be HEOS players.
 
+When grouping a new media player to an existing group you must identify all group members. Any media players that are ommitted from the 'media_player.join' service call will dropped from the group.
+
 ```yaml
 entity_id: media_player.office
 group_members:
