@@ -610,11 +610,15 @@ Although we try our best, some entities don't work with the HomeKit integration 
 
 If you have any iOS 12.x devices signed into your iCloud account, media player entities with `device_class: tv` or `device_class: receiver` may trigger this condition. Filtering the entity or signing the iOS 12.x device out of iCloud should resolve the issue after restarting other devices.
 
-#### Accessories are all listed as not responding
+#### Accessories are all listed as not responding or unavailable
 
 There were reports where the IGMP settings in a router were causing issues with HomeKit. This resulted in a situation where all of the Home Assistant HomeKit accessories stopped responding a few minutes after Home Assistant (re)started. Double check your router's IGMP settings if you experience this issue. The default IGMP settings typically work best.
 
 See [specific entity doesn't work](#specific-entity-doesnt-work)
+
+#### Accessories are all listed as not responding or unavailable on Apple Watch
+
+In some instances accessories will show up on the Apple Watch but report unavailable. In order to do a proper first-time sync of the Home to the Apple Watch, the watch may need to be forcefully connected to WiFi. This is because sometimes the watch will rely on a bluetooth connection to the iPhone instead, sometimes because during the initial watch and phone pairing the phone may have been using a 5ghz WiFi that the watch does not support. To do this, put the iPhone into Airplane mode and turn off its WiFi and bluetooth. Then, in the settings menu on the watch, go to WiFi and connect the watch to your WiFi directly. Once this is done you can turn off Airplane mode and re-enable WiFi and bluetooth on your phone. The watch should now properly sync and see the accessories as available.
 
 #### Accessory not responding - after restart or update
 
